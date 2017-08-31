@@ -1,8 +1,13 @@
 <?php
+//inclui a biblioteca de funções utilizadas
 include "functions.php";
+//declara as variáveis que serão utilizadas
 $chaveC = $textoC = $chaveD = $textoD = $textoDSC = "";
-	
+
+// quando algo é enviado
 if ($_SERVER['REQUEST_METHOD']=='POST'){
+    
+    //o id é a variável que define qual função é utilizada, por meio do switch logo abaixo
 	$id=$_POST['enviar'];
 	
 	switch ($id) {
@@ -117,6 +122,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 	
 	<br><h3>Texto Encriptado:</h3>
 			<?php
+            //se a função encriptar foi utilizada, imprime o texto
 			if ($textoC){
 				echo $textoC;
 			}
@@ -158,6 +164,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 
 	<br><h3>Texto Decriptografado:</h3>
 			<?php
+            //se a função decriptar foi utilizada, imprime o texto
 			if ($textoD){
 				echo $textoD;
 			}
@@ -195,6 +202,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 
 	<br><h3>Texto Decriptografado sem Chave:</h3>
 			<?php
+            //se a função decriptar sem chave foi utilizada, imprime o texto
 			if($textoDSC){
 				echo "$textoDSC";
 			}
